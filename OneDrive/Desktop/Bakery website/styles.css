@@ -1,0 +1,145 @@
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  footer {
+    margin-top: auto;
+  }
+  .table {
+    margin-top: 40px;
+  }
+  .orar {
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    font-size: 32px;
+    margin: 50px auto; 
+    
+  }
+  #myCarousel {
+    width: 90%;
+    max-width: 900px; 
+    height: 100vh;
+    margin: 50px auto; 
+}
+
+.carousel-item {
+    min-height: 300px; 
+}
+
+#myCarousel img {
+  max-height: 300px; 
+  width: 100%; 
+  object-fit: cover; 
+}
+
+
+/* background container */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ffd1dc, #a8e6cf, #ffecb3, #b3e5fc);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+  }
+  
+  /* gradient Animation */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* waves */
+  .waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: url("https://cdn.jsdelivr.net/gh/kognise/water.css/waves.svg");
+    background-size: cover;
+    animation: waveMove 5s linear infinite;
+    opacity: 0.6;
+  }
+  
+  /* wave animation */
+  @keyframes waveMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  h2.border-bottom {
+    border-bottom: 2px solid black !important;
+  }
+
+  .clientsOpinions {
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    font-size: 32px;
+    margin: 50px auto; 
+  }
+  
+  .carousel-item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Sau 'contain' dacă vrei să păstrezi proporțiile */
+}
+
+.clujDescription {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 10vh; */
+    font-size: 22px;
+    margin: 20px auto; 
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.clujHeader {
+  font-family: 'Pacifico', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  font-size: 32px;
+  margin: 50px auto; 
+}
+.inside-the-bakery1 {
+  max-height: 190px;
+  width: 100%;
+  object-fit: cover; 
+  border-radius: 8px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.team {
+ height: 300px;
+  width:auto; 
+  border-radius: 8px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+}
+
+ 
+  
