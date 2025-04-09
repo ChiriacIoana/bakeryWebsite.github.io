@@ -16,31 +16,51 @@ $(document).ready(function () {
     });
   });
 
-
+  //search bar functionality
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("form").addEventListener("submit", function (e) {
       e.preventDefault(); // stop page from reloading
-      const query = document.querySelector("input[type='search']").value.toLowerCase();
+      //console.log("Form submitted");
+  
+      //normalize the query
+      const query = document.querySelector("input[type='search']").value
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // remove accents
+      .trim();
       const items = document.querySelectorAll(".searchable");
       let firstMatch = null;
+
+     // Handle redirect to other pages
+    const pageRoutes = {
+      "about us": "aboutUs.html",
+      "aboutus": "aboutUs.html",
+      "cluj": "cluj.html",
+      "brasov": "brasov.html",
+      "brașov": "brasov.html",
+      "home": "index.html",
+      "home page": "index.html",
+      "in curând": "#",
+    };
+
+    if (pageRoutes[query]) {
+      window.location.href = pageRoutes[query];
+      //console.log("Redirecting to: " + pageRoutes[query]);
+      return; 
+    }
   
       items.forEach(item => {
-        const card = item.closest(".col"); // gets bootstrap card column
         if (item.textContent.toLowerCase().includes(query)) {
-          card.style.display = "block";
-  
-          // Save the first matching card to scroll to it
           if (!firstMatch) {
-            firstMatch = card;
+            firstMatch = item;
           }
-        } else {
-          card.style.display = "none";
         }
       });
   
-      // Scroll to first match
       if (firstMatch) {
-        firstMatch.scrollIntoView({ behavior: "smooth", block: "start" });
+        firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+        firstMatch.classList.add("highlight");
+        setTimeout(() => firstMatch.classList.remove("highlight"), 2000);
       }
     });
   });
